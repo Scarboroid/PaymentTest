@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\XYZPaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/pay', [PaymentController::class, 'create'])->name('payment.create');
+Route::post('/pay', [PaymentController::class, 'store'])->name('payment.store');
