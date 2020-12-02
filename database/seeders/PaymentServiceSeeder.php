@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Payment\PaymentService;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class PaymentServiceSeeder extends Seeder
 {
