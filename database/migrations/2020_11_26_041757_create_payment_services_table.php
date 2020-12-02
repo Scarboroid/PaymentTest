@@ -15,8 +15,8 @@ class CreatePaymentServicesTable extends Migration
     {
         Schema::create('payment_services', function (Blueprint $table) {
             $table->id();
-            $table->string('code', '20')->index();
-            $table->string('name');
+            $table->string('code', 20)->index();
+            $table->string('name', 40);
             $table->timestamps();
         });
     }

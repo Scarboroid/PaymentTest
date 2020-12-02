@@ -13,12 +13,13 @@ class CreatePaymentRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('payment_requests', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('user_id');
             $table->unsignedMediumInteger('payment_service_id');
-            $table->unsignedInteger('sum');
-            $table->boolean('is_success');
+            $table->string('name')->nullable();
+            $table->unsignedFloat('sum');
+            $table->boolean('is_success')->default(false);
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreatePaymentRequestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment_requests');
+        Schema::dropIfExists('payments');
     }
 }
